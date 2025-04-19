@@ -34,7 +34,7 @@ async function analyzeFileContent(fileContent: string, model: any): Promise<stri
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
-  return response.text().split('\n').filter(line => line.trim());
+  return response.text().split('\n').filter((line: string) => line.trim());
 }
 
 async function getRepositoryContents(owner: string, repoName: string, path: string = ''): Promise<any[]> {
